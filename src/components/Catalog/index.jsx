@@ -1,15 +1,27 @@
 import React from "react";
+
 import campersData from "./campersData.json";
 import Card from "components/Card";
+import Sidebar from "components/Sidebar";
+
+import {
+  CatalogContainer,
+  SidebarContainer,
+  CardContainer,
+} from "components/Catalog/styled";
 
 const Catalog = () => {
-  console.log(campersData);
   return (
-    <div>
-      {campersData.map((camper) => (
-        <Card key={camper._id} data={camper} />
-      ))}
-    </div>
+    <CatalogContainer>
+      <SidebarContainer>
+        <Sidebar />
+      </SidebarContainer>
+      <CardContainer>
+        {campersData.map((camper) => (
+          <Card key={camper._id} data={camper} />
+        ))}
+      </CardContainer>
+    </CatalogContainer>
   );
 };
 

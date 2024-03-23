@@ -31,7 +31,7 @@ const Card = ({ data }) => {
     details,
     reviews,
   } = data;
-  const [showAllFeatures, setShowAllFeatures] = useState(false);
+  // const [showAllFeatures, setShowAllFeatures] = useState(false);
 
   const handleClick = () => {
     // Додайте код для відкриття модального вікна при кліку на картку
@@ -71,7 +71,7 @@ const Card = ({ data }) => {
   };
 
   return (
-    <CardContainer>
+    <CardContainer key={data._id}>
       <Image src={gallery ? gallery[0] : ""} alt={name} />
       <Content>
         <TitlePriceContainer>

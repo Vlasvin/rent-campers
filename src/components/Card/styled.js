@@ -11,7 +11,6 @@ import { ReactComponent as BedSvg } from "svg/Bed.svg";
 import { ReactComponent as ACSvg } from "svg/AC.svg";
 
 export const CardContainer = styled.div`
-  margin-top: 32px;
   display: flex;
   width: 888px;
   height: 358px;
