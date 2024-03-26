@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import campersData from "./campersData.json";
 import Card from "components/Card";
 import Sidebar from "components/Sidebar";
+import Modal from "components/Modal";
 
 import {
   CatalogContainer,
@@ -13,6 +14,7 @@ import {
 
 const Catalog = () => {
   const [filteredCampers, setFilteredCampers] = useState(campersData);
+  const [selectedCamper, setSelectedCamper] = useState(null);
   const [visibleCards, setVisibleCards] = useState(4);
   const cardsPerLoad = 4;
 
@@ -54,7 +56,6 @@ const Catalog = () => {
         } else if (typeof camperEquipment === "string") {
           return camperEquipment.toLowerCase() === filterKey.toLowerCase();
         }
-
         return false;
       });
 
@@ -65,7 +66,6 @@ const Catalog = () => {
       const campersTypeMatch =
         normalizeCamperType(filters.campersType) === "" ||
         camper.form === normalizeCamperType(filters.campersType);
-
       return locationMatch && equipmentMatch && campersTypeMatch;
     });
 
@@ -76,6 +76,14 @@ const Catalog = () => {
     setVisibleCards((prevVisibleCards) => prevVisibleCards + cardsPerLoad);
   };
 
+  const openModal = (camper) => {
+    setSelectedCamper(camper);
+  };
+
+  const closeModal = () => {
+    setSelectedCamper(null);
+  };
+
   return (
     <CatalogContainer>
       <SidebarContainer>
@@ -83,12 +91,15 @@ const Catalog = () => {
       </SidebarContainer>
       <CardContainer>
         {filteredCampers.slice(0, visibleCards).map((camper) => (
-          <Card key={camper._id} data={camper} />
+          <Card key={camper._id} data={camper} openModal={openModal} />
         ))}
         {visibleCards < filteredCampers.length && (
           <LoadMoreBtn onClick={handleLoadMore}>Load more</LoadMoreBtn>
         )}
       </CardContainer>
+      {selectedCamper && (
+        <Modal closeModal={closeModal} data={selectedCamper} />
+      )}
     </CatalogContainer>
   );
 };

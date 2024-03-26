@@ -1,4 +1,5 @@
 // import React, { useState } from "react";
+import formatLocation from "helpers/formatLocation";
 import FeatureButton from "./FeatureButton";
 
 import {
@@ -20,7 +21,7 @@ import {
   TitlePriceContainer,
 } from "./styled";
 
-const Card = ({ data }) => {
+const Card = ({ data, openModal }) => {
   const {
     gallery,
     name,
@@ -31,11 +32,6 @@ const Card = ({ data }) => {
     details,
     reviews,
   } = data;
-  // const [showAllFeatures, setShowAllFeatures] = useState(false);
-
-  // const handleClick = () => {
-  //   // Додайте код для відкриття модального вікна при кліку на картку
-  // };
 
   const renderFeatureButtons = () => {
     const limitedFeatures = [
@@ -62,14 +58,6 @@ const Card = ({ data }) => {
     return featureButtons;
   };
 
-  const formatLocation = (locationString) => {
-    const parts = locationString.split(", ");
-    if (parts.length === 2) {
-      return `${parts[1]}, ${parts[0]}`;
-    }
-    return locationString;
-  };
-
   return (
     <CardContainer key={data._id}>
       <Image src={gallery ? gallery[0] : ""} alt={name} />
@@ -91,7 +79,7 @@ const Card = ({ data }) => {
         <Description>{description}</Description>
         <FeaturesContainer>{renderFeatureButtons()}</FeaturesContainer>
 
-        <ShowMoreBtn>Show more</ShowMoreBtn>
+        <ShowMoreBtn onClick={() => openModal(data)}>Show more</ShowMoreBtn>
       </Content>
     </CardContainer>
   );
