@@ -21,6 +21,7 @@ import {
   Reviews,
   FeaturesContainer,
 } from "./styled";
+import BookForm from "./BookForm";
 
 const Modal = ({ closeModal, data }) => {
   const { name, rating, reviews, location, price, gallery, description } = data;
@@ -77,6 +78,7 @@ const Modal = ({ closeModal, data }) => {
           <Features>Features</Features>
           <Reviews>Reviews</Reviews>
         </FeaturesContainer>
+        <BookForm></BookForm>
       </ModalContent>
     </ModalContainer>
   );
