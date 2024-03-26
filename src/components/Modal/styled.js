@@ -4,31 +4,29 @@ import { ReactComponent as StarSvg } from "svg/icon_star.svg";
 import { ReactComponent as LocationSvg } from "svg/map-pin.svg";
 
 export const ModalContainer = styled.div`
-  display: flex;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.4);
 `;
 
 export const ModalContent = styled.div`
-  max-width: 902px;
-  max-height: 1208px;
+  width: 902px;
+  height: 1208px;
   padding: 40px;
   border-radius: 20px;
   background: rgb(255, 255, 255);
-  margin: 15% auto;
+  margin: 9% auto;
 `;
 
 export const CloseButton = styled.span`
-  color: #aaaaaa;
+  color: rgb(16, 24, 40);
   float: right;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
 
   &:hover,
@@ -118,7 +116,26 @@ export const Description = styled.p`
   text-align: left;
 `;
 
-export const Features = styled.p`
+export const FeaturesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
   margin-top: 44px;
 `;
-export const Reviews = styled.p``;
+
+export const Features = styled.p`
+  color: rgb(16, 24, 40);
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 23px;
+`;
+export const Reviews = styled.p`
+  color: rgb(16, 24, 40);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: 18px;
+  border-bottom: 5px solid rgb(228, 72, 72);
+`;

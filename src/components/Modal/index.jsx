@@ -1,5 +1,5 @@
-import React from "react";
-// import { Scrollbar } from "react-scrollbars-custom";
+import React, { useEffect } from "react";
+import { Scrollbars } from "react-custom-scrollbars";
 
 import formatLocation from "helpers/formatLocation";
 import {
@@ -19,16 +19,37 @@ import {
   ImageContainer,
   Features,
   Reviews,
+  FeaturesContainer,
 } from "./styled";
 
 const Modal = ({ closeModal, data }) => {
   const { name, rating, reviews, location, price, gallery, description } = data;
+
+  const handleClickOutside = (event) => {
+    if (event.target === event.currentTarget) {
+      closeModal();
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [closeModal]);
+
   return (
-    <ModalContainer>
-      {/* <Scrollbar style={{ width: "100%", height: "100%" }}> */}
+    <ModalContainer onClick={handleClickOutside}>
       <ModalContent>
         <CloseButton onClick={closeModal}>&times;</CloseButton>
         <Title>{name}</Title>
+
         <IconContainer>
           <IconStar aria-label="edit icon" />
           <Rating>{rating}</Rating>
@@ -37,21 +58,26 @@ const Modal = ({ closeModal, data }) => {
           <Location>{formatLocation(location)}</Location>
         </IconContainer>
         <Price>€{Number(price).toFixed(2)}</Price>
-        <ImageContainer>
-          {gallery &&
-            gallery.map((imageUrl, index) => (
-              <Image
-                key={index}
-                src={imageUrl}
-                alt={`${name} Image ${index}`}
-              />
-            ))}
-        </ImageContainer>
-        <Description>{description}</Description>
-        <Features>Features</Features>
-        <Reviews>Reviews</Reviews>
+
+        <Scrollbars style={{ width: "100%", height: 406 }}>
+          <ImageContainer>
+            {gallery &&
+              gallery.map((imageUrl, index) => (
+                <Image
+                  key={index}
+                  src={imageUrl}
+                  alt={`${name} Image ${index}`}
+                />
+              ))}
+          </ImageContainer>
+          <Description>{description}</Description>
+        </Scrollbars>
+
+        <FeaturesContainer>
+          <Features>Features</Features>
+          <Reviews>Reviews</Reviews>
+        </FeaturesContainer>
       </ModalContent>
-      {/* </Scrollbar> */}
     </ModalContainer>
   );
 };

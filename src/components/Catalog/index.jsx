@@ -78,10 +78,12 @@ const Catalog = () => {
 
   const openModal = (camper) => {
     setSelectedCamper(camper);
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setSelectedCamper(null);
+    document.body.style.overflow = "";
   };
 
   return (
