@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import FeatureButton from "./FeatureButton";
 
 import {
@@ -33,9 +33,9 @@ const Card = ({ data }) => {
   } = data;
   // const [showAllFeatures, setShowAllFeatures] = useState(false);
 
-  const handleClick = () => {
-    // Додайте код для відкриття модального вікна при кліку на картку
-  };
+  // const handleClick = () => {
+  //   // Додайте код для відкриття модального вікна при кліку на картку
+  // };
 
   const renderFeatureButtons = () => {
     const limitedFeatures = [

@@ -12,7 +12,7 @@ import { ReactComponent as ACSvg } from "svg/AC.svg";
 
 export const CardContainer = styled.div`
   display: flex;
-  width: 888px;
+  width: 100%;
   height: 358px;
   padding: 24px;
   box-sizing: border-box;
@@ -182,4 +182,8 @@ export const ShowMoreBtn = styled.button`
   color: rgb(255, 255, 255);
   background: rgb(228, 72, 72);
   border: none;
+
+  &:hover {
+    background: rgb(216, 67, 67);
+  }
 `;
