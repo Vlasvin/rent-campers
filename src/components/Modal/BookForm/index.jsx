@@ -2,6 +2,15 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import {
+  FormTitle,
+  FormSubtitle,
+  StyledButton,
+  StyledForm,
+  StyledInput,
+  FormError,
+  StyledTextarea,
+} from "./styled";
 
 const BookForm = () => {
   const {
@@ -17,44 +26,45 @@ const BookForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <FormTitle>Book your campervan now</FormTitle>
+      <FormSubtitle>
+        Stay connected! We are always ready to help you.
+      </FormSubtitle>
       <div>
-        <label>Name</label>
-        <input
+        <StyledInput
           type="text"
+          placeholder="Name"
           {...register("name", { required: "Name is required" })}
         />
-        {errors.name && <span>{errors.name.message}</span>}
+        {errors.name && <FormError>{errors.name.message}</FormError>}
       </div>
-
       <div>
-        <label>Email</label>
-        <input
+        <StyledInput
           type="email"
+          placeholder="Email"
           {...register("email", {
             required: "Email is required",
             pattern: { value: /^\S+@\S+$/i, message: "Invalid email" },
           })}
         />
-        {errors.email && <span>{errors.email.message}</span>}
+        {errors.email && <FormError>{errors.email.message}</FormError>}
       </div>
-
       <div>
-        <label>Booking Date</label>
         <DatePicker
-          selected={null} // Поточна обрана дата
-          onChange={(date) => setValue("bookingDate", date)} // Параметр date буде містити обрану дату
+          selected={null}
+          onChange={(date) => setValue("bookingDate", date)}
+          placeholder="Name"
         />
-        {errors.bookingDate && <span>{errors.bookingDate.message}</span>}
+        {errors.bookingDate && (
+          <FormError>{errors.bookingDate.message}</FormError>
+        )}
       </div>
-
       <div>
-        <label>Comment</label>
-        <textarea {...register("comment")} />
+        <StyledTextarea placeholder="Comment" {...register("comment")} />
       </div>
-
-      <button type="submit">Send</button>
-    </form>
+      <StyledButton type="submit">Send</StyledButton>
+    </StyledForm>
   );
 };
 
