@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Scrollbars } from "react-custom-scrollbars";
+// import { Scrollbars } from "react-custom-scrollbars";
 
 import formatLocation from "helpers/formatLocation";
 import {
@@ -60,19 +60,19 @@ const Modal = ({ closeModal, data }) => {
         </IconContainer>
         <Price>€{Number(price).toFixed(2)}</Price>
 
-        <Scrollbars style={{ width: "100%", height: 406 }}>
-          <ImageContainer>
-            {gallery &&
-              gallery.map((imageUrl, index) => (
-                <Image
-                  key={index}
-                  src={imageUrl}
-                  alt={`${name} Image ${index}`}
-                />
-              ))}
-          </ImageContainer>
-          <Description>{description}</Description>
-        </Scrollbars>
+        {/* <Scrollbars style={{ width: "100%", height: 406 }}> */}
+        <ImageContainer>
+          {gallery &&
+            gallery.map((imageUrl, index) => (
+              <Image
+                key={index}
+                src={imageUrl}
+                alt={`${name} Image ${index}`}
+              />
+            ))}
+        </ImageContainer>
+        <Description>{description}</Description>
+        {/* </Scrollbars> */}
 
         <FeaturesContainer>
           <Features>Features</Features>
