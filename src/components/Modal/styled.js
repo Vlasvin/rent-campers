@@ -23,6 +23,29 @@ export const ModalContent = styled.div`
   margin: 9% auto;
 `;
 
+export const ScrollBar = styled.div`
+  overflow-y: auto;
+  height: 100%;
+  padding-right: 8px;
+  &::-webkit-scrollbar {
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+    border-radius: 7px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 264px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+`;
+
 export const CloseButton = styled.span`
   color: rgb(16, 24, 40);
   float: right;

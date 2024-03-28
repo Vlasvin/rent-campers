@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-// import { Scrollbars } from "react-custom-scrollbars";
 
 import formatLocation from "helpers/formatLocation";
+import BookForm from "./BookForm";
 import {
   CloseButton,
   Description,
@@ -20,8 +20,8 @@ import {
   Features,
   Reviews,
   FeaturesContainer,
+  ScrollBar,
 } from "./styled";
-import BookForm from "./BookForm";
 
 const Modal = ({ closeModal, data }) => {
   const { name, rating, reviews, location, price, gallery, description } = data;
@@ -59,26 +59,25 @@ const Modal = ({ closeModal, data }) => {
           <Location>{formatLocation(location)}</Location>
         </IconContainer>
         <Price>€{Number(price).toFixed(2)}</Price>
+        <ScrollBar>
+          <ImageContainer>
+            {gallery &&
+              gallery.map((imageUrl, index) => (
+                <Image
+                  key={index}
+                  src={imageUrl}
+                  alt={`${name} Image ${index}`}
+                />
+              ))}
+          </ImageContainer>
+          <Description>{description}</Description>
 
-        {/* <Scrollbars style={{ width: "100%", height: 406 }}> */}
-        <ImageContainer>
-          {gallery &&
-            gallery.map((imageUrl, index) => (
-              <Image
-                key={index}
-                src={imageUrl}
-                alt={`${name} Image ${index}`}
-              />
-            ))}
-        </ImageContainer>
-        <Description>{description}</Description>
-        {/* </Scrollbars> */}
-
-        <FeaturesContainer>
-          <Features>Features</Features>
-          <Reviews>Reviews</Reviews>
-        </FeaturesContainer>
-        <BookForm></BookForm>
+          <FeaturesContainer>
+            <Features>Features</Features>
+            <Reviews>Reviews</Reviews>
+          </FeaturesContainer>
+          <BookForm></BookForm>
+        </ScrollBar>
       </ModalContent>
     </ModalContainer>
   );
