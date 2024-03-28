@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -22,10 +22,7 @@ const BookForm = () => {
     setValue,
   } = useForm();
 
-  const [selectedDate, setSelectedDate] = useState(null);
-
   const handleDateChange = (event) => {
-    setSelectedDate(event.target.value);
     setValue("bookingDate", event.target.value);
   };
 

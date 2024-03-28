@@ -1,5 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
-import { ReactComponent as Calendar } from "svg/Calendar.svg";
+import styled from "styled-components";
 
 export const StyledForm = styled.form`
   display: flex;
