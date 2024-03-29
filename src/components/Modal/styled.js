@@ -147,18 +147,26 @@ export const FeaturesContainer = styled.div`
   margin-top: 44px;
 `;
 
-export const Features = styled.p`
+export const FeaturesBtn = styled.p`
   color: rgb(16, 24, 40);
   font-size: 20px;
   font-weight: 600;
   margin-top: 0;
-  margin-bottom: 23px;
+  margin-bottom: ${({ active }) => (active ? "0" : "23px")};
+  padding-bottom: ${({ active }) => (active ? "18px" : "0")};
+  border-bottom: ${({ active }) =>
+    active ? "5px solid rgb(228, 72, 72)" : "none"};
 `;
-export const Reviews = styled.p`
+
+export const ReviewsBtn = styled.p`
   color: rgb(16, 24, 40);
   font-size: 20px;
   font-weight: 600;
   margin: 0;
-  padding-bottom: 18px;
-  border-bottom: 5px solid rgb(228, 72, 72);
+  margin-bottom: ${({ active }) => (active ? "0" : "23px")};
+  padding-bottom: ${({ active }) => (active ? "18px" : "0")};
+  border-bottom: ${({ active }) =>
+    active ? "5px solid rgb(228, 72, 72)" : "none"};
 `;
+
+export const ActiveTabContainer = styled.div``;

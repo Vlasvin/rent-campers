@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import formatLocation from "helpers/formatLocation";
-import BookForm from "./BookForm";
+import Features from "components/Modal/Features";
+import Reviews from "components/Modal/Reviews";
+
 import {
   CloseButton,
   Description,
@@ -17,19 +19,29 @@ import {
   ReviewsCount,
   Title,
   ImageContainer,
-  Features,
-  Reviews,
+  FeaturesBtn,
+  ReviewsBtn,
   FeaturesContainer,
   ScrollBar,
+  ActiveTabContainer,
 } from "./styled";
 
 const Modal = ({ closeModal, data }) => {
   const { name, rating, reviews, location, price, gallery, description } = data;
+  const [activeTab, setActiveTab] = useState("");
 
   const handleClickOutside = (event) => {
     if (event.target === event.currentTarget) {
       closeModal();
     }
+  };
+
+  const handleFeaturesClick = () => {
+    setActiveTab("features");
+  };
+
+  const handleReviewsClick = () => {
+    setActiveTab("reviews");
   };
 
   useEffect(() => {
@@ -38,7 +50,6 @@ const Modal = ({ closeModal, data }) => {
         closeModal();
       }
     };
-
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
@@ -73,10 +84,23 @@ const Modal = ({ closeModal, data }) => {
           <Description>{description}</Description>
 
           <FeaturesContainer>
-            <Features>Features</Features>
-            <Reviews>Reviews</Reviews>
+            <FeaturesBtn
+              onClick={handleFeaturesClick}
+              active={activeTab === "features"}
+            >
+              Features
+            </FeaturesBtn>
+            <ReviewsBtn
+              onClick={handleReviewsClick}
+              active={activeTab === "reviews"}
+            >
+              Reviews
+            </ReviewsBtn>
           </FeaturesContainer>
-          <BookForm></BookForm>
+          <ActiveTabContainer>
+            {activeTab === "features" && <Features data={data} />}
+            {activeTab === "reviews" && <Reviews reviews={reviews} />}
+          </ActiveTabContainer>
         </ScrollBar>
       </ModalContent>
     </ModalContainer>
