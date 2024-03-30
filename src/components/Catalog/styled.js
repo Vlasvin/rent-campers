@@ -11,6 +11,9 @@ export const CatalogContainer = styled.div`
 export const SidebarContainer = styled.div`
   width: 360px;
   margin-right: 64px;
+  top: 160px;
+  left: 44px;
+  position: fixed;
 `;
 
 export const CardContainer = styled.div`
@@ -19,6 +22,7 @@ export const CardContainer = styled.div`
   flex-grow: 1;
   max-width: 880px;
   gap: 32px;
+  margin-left: 424px;
 `;
 
 export const LoadMoreBtn = styled.button`

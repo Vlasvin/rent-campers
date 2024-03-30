@@ -101,5 +101,5 @@ export const StyledButton = styled.button`
 export const FormError = styled.span`
   color: red;
   font-size: 12px;
-  margin-top: 4px;
+  margin-top: 0;
 `;
