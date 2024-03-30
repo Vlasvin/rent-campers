@@ -59,18 +59,19 @@ const Modal = ({ closeModal, data }) => {
   return (
     <ModalContainer onClick={handleClickOutside}>
       <ModalContent>
-        <CloseButton onClick={closeModal}>&times;</CloseButton>
-        <Title>{name}</Title>
-
-        <IconContainer>
-          <IconStar aria-label="edit icon" />
-          <Rating>{rating}</Rating>
-          <ReviewsCount>({reviews.length} Reviews)</ReviewsCount>
-          <IconLocation aria-label="edit icon" />
-          <Location>{formatLocation(location)}</Location>
-        </IconContainer>
-        <Price>€{Number(price).toFixed(2)}</Price>
         <ScrollBar>
+          <CloseButton onClick={closeModal}>&times;</CloseButton>
+          <Title>{name}</Title>
+
+          <IconContainer>
+            <IconStar aria-label="edit icon" />
+            <Rating>{rating}</Rating>
+            <ReviewsCount>({reviews.length} Reviews)</ReviewsCount>
+            <IconLocation aria-label="edit icon" />
+            <Location>{formatLocation(location)}</Location>
+          </IconContainer>
+          <Price>€{Number(price).toFixed(2)}</Price>
+
           <ImageContainer>
             {gallery &&
               gallery.map((imageUrl, index) => (

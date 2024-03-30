@@ -16,16 +16,17 @@ export const ModalContainer = styled.div`
 
 export const ModalContent = styled.div`
   width: 902px;
-  height: 1208px;
+  height: 720px;
   padding: 40px;
   border-radius: 20px;
   background: rgb(255, 255, 255);
-  margin: 9% auto;
+  margin: 14% auto;
 `;
 
 export const ScrollBar = styled.div`
   overflow-y: auto;
-  height: 100%;
+  overflow-x: hidden;
+  height: 720px;
   padding-right: 8px;
   &::-webkit-scrollbar {
   }
@@ -37,7 +38,6 @@ export const ScrollBar = styled.div`
 
   &::-webkit-scrollbar {
     width: 8px;
-    height: 264px;
     background: transparent;
   }
 
@@ -123,6 +123,10 @@ export const ImageContainer = styled.div`
   display: flex;
   gap: 16px;
   margin-top: 24px;
+
+  &::last-child {
+    margin-right: 0;
+  }
 `;
 
 export const Image = styled.img`

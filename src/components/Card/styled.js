@@ -212,7 +212,6 @@ export const FeatureButton = styled.button`
   align-items: flex-end;
   gap: 8px;
   justify-content: flex-start;
-  /* align-items: center; */
   padding: 12px 18px 12px 18px;
   border: none;
   cursor: pointer;

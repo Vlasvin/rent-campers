@@ -7,7 +7,7 @@ export const StyledForm = styled.form`
   align-items: flex-start;
   padding: 24px;
   max-width: 400px;
-  /* height: 532px; */
+  max-height: 484px;
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
 `;
@@ -68,7 +68,7 @@ export const StyledTextarea = styled.textarea`
   color: rgba(16, 24, 40, 0.6);
   line-height: 20px;
   width: 364px;
-  min-height: 114px;
+  min-height: 100px;
   border-radius: 10px;
   background: rgb(247, 247, 247);
   padding: 18px;

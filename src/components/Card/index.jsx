@@ -1,4 +1,4 @@
-// import React, { useState } from "react";
+import React from "react";
 import formatLocation from "helpers/formatLocation";
 import FeatureButton from "./FeatureButton";
 
@@ -42,12 +42,14 @@ const Card = ({ data, openModal }) => {
       { key: "beds", label: "Beds" },
       { key: "airConditioner", label: "Air Conditioner" },
     ];
+
     const featureButtons = [];
     for (const feature of limitedFeatures) {
       const featureValue = data[feature.key] || details[feature.key];
       if (featureValue !== undefined) {
         featureButtons.push(
           <FeatureButton
+            key={feature.key}
             feature={feature.key}
             value={featureValue}
             icon={feature.key}

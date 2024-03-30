@@ -9,7 +9,6 @@ import {
   IconBed,
   IconAC,
   IconShower,
-  IconTV,
   IconCD,
   IconRadio,
   IconToilet,
@@ -37,8 +36,6 @@ const FeatureButton = ({ feature, value, icon }) => {
         return <IconAC aria-label="edit icon" />;
       case "shower":
         return <IconShower aria-label="edit icon" />;
-      case "TV":
-        return <IconTV aria-label="edit icon" />;
       case "CD":
         return <IconCD aria-label="edit icon" />;
       case "radio":
@@ -73,9 +70,7 @@ const FeatureButton = ({ feature, value, icon }) => {
       case "beds":
         return `${value} ${feature}`;
       case "airConditioner":
-        return;
-      case "TV":
-        return "TV";
+        return "AC";
       case "CD":
         return "CD";
       case "radio":
@@ -103,6 +98,7 @@ const FeatureButton = ({ feature, value, icon }) => {
   return (
     <StyledFeatureButton>
       {selectIcon(icon)}
+
       {formatFeature(feature, value)}
     </StyledFeatureButton>
   );
