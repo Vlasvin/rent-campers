@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import campersData from "./campersData.json";
+import { getCampers } from "../../redux/catalog/operations";
 import Card from "components/Card";
 import Sidebar from "components/Sidebar";
 import Modal from "components/Modal";
@@ -13,13 +14,23 @@ import {
 } from "components/Catalog/styled";
 
 const Catalog = () => {
-  const [filteredCampers, setFilteredCampers] = useState(campersData);
+  const dispatch = useDispatch();
+  const campers = useSelector((state) => state.catalog.campers);
+  const [filteredCampers, setFilteredCampers] = useState(campers);
   const [selectedCamper, setSelectedCamper] = useState(null);
   const [visibleCards, setVisibleCards] = useState(4);
   const cardsPerLoad = 4;
 
+  useEffect(() => {
+    dispatch(getCampers());
+  }, [dispatch]);
+
+  useEffect(() => {
+    setFilteredCampers(campers);
+  }, [campers]);
+
   const handleSearch = (filters) => {
-    const filteredData = campersData.filter((camper) => {
+    const filteredData = campers.filter((camper) => {
       const locationMatch =
         filters.location === "" ||
         camper.location.toLowerCase().includes(filters.location.toLowerCase());
@@ -29,7 +40,6 @@ const Catalog = () => {
       );
 
       const equipmentMatch = equipmentKeys.every((filterKey) => {
-        console.log(equipmentKeys);
         const getCamperKey = (filterKey) => {
           switch (filterKey) {
             case "AC":

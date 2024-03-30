@@ -1,9 +1,26 @@
 import React from "react";
-import { HeaderContainer, Nav, NavItem, NavList, StyledLink } from "./styled";
+
+import logo from "svg/logo.png";
+import {
+  HeaderContainer,
+  LayoutLogo,
+  Logo,
+  Nav,
+  NavItem,
+  NavList,
+  StyledLink,
+} from "./styled";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <HeaderContainer>
+      <LayoutLogo>
+        <Link to="/">
+          <Logo src={logo} alt="CamperRent" />
+        </Link>
+      </LayoutLogo>
+
       <Nav>
         <NavList>
           <NavItem>

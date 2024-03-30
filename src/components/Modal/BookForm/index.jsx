@@ -28,7 +28,7 @@ const BookForm = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    // window.location.reload();
+    window.location.reload();
   };
 
   const currentDate = new Date().toISOString().split("T")[0];

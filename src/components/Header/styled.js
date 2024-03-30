@@ -2,13 +2,23 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  background-color: #333;
+  display: flex;
+  flex-direction: row;
+  background-color: #030751;
   color: #fff;
   padding: 20px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+`;
+
+export const LayoutLogo = styled.div``;
+
+export const Logo = styled.img`
+  width: 100px;
+  height: 100px;
+  border-radius: 60px;
 `;
 
 export const Nav = styled.nav`
@@ -29,7 +39,7 @@ export const NavItem = styled.li``;
 export const StyledLink = styled(Link)`
   color: #fff;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 28px;
   transition: color 0.3s ease;
 
   &:hover {
