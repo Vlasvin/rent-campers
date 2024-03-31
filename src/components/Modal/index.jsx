@@ -62,7 +62,6 @@ const Modal = ({ closeModal, data }) => {
         <ScrollBar>
           <CloseButton onClick={closeModal}>&times;</CloseButton>
           <Title>{name}</Title>
-
           <IconContainer>
             <IconStar aria-label="edit icon" />
             <Rating>{rating}</Rating>

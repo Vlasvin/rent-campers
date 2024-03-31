@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import KemperImg from "svg/Kemper.jpeg";
+import mainBackgroundImg from "pictures/img/mainBackground.jpg";
 
 export const HomeContainer = styled.div`
   max-width: 1000px;
@@ -15,13 +15,14 @@ export const HomeContainer = styled.div`
 
 export const Title = styled.h1`
   color: #fff;
-  font-size: 34px;
+  font-size: 56px;
   margin-bottom: 20px;
 `;
 
 export const Description = styled.p`
   color: #fff;
-  font-size: 24px;
+  font-size: 36px;
+  line-height: 1.5;
   margin-bottom: 20px;
 `;
 
@@ -36,11 +37,11 @@ export const BackgroundImage = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(${KemperImg});
+  background-image: url(${mainBackgroundImg});
   background-size: cover;
   background-position: center;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.9;
 `;
 
 export const DarkOverlay = styled.div`

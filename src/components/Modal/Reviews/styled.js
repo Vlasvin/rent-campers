@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { ReactComponent as StarSvg } from "svg/icon_star.svg";
-import { ReactComponent as EmptyStarSvg } from "svg/icon_star_empty.svg";
+import { ReactComponent as StarSvg } from "pictures/svg/icon_star.svg";
+import { ReactComponent as EmptyStarSvg } from "pictures/svg/icon_star_empty.svg";
 
 export const ReviewsContainer = styled.div`
   display: flex;

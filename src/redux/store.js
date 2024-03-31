@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
-  FLUSH,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-  REHYDRATE,
-  persistReducer,
+  //   FLUSH,
+  //   PAUSE,
+  //   PERSIST,
+  //   PURGE,
+  //   REGISTER,
+  //   REHYDRATE,
+  //   persistReducer,
   persistStore,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+// import storage from "redux-persist/lib/storage";
 import { catalogReducer } from "./catalog/catalogSlice";
 
 // const favoritesPersistConfig = {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import logo from "svg/logo.png";
+import logo from "pictures/img/logo.png";
 import {
   HeaderContainer,
   LayoutLogo,

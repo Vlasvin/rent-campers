@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as LocationSvg } from "svg/map-pin.svg";
+import { ReactComponent as LocationSvg } from "pictures/svg/map-pin.svg";
 
 export const SidebarContainer = styled.div`
   width: 360px;

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import { ReactComponent as ACSvg } from "svg/AC.svg";
-import { ReactComponent as AutomaticSvg } from "svg/Automatic.svg";
-import { ReactComponent as KitchenSvg } from "svg/Kitchen.svg";
-import { ReactComponent as TVSvg } from "svg/TV.svg";
-import { ReactComponent as ShowerWCSvg } from "svg/Shower.svg";
-import { ReactComponent as VanSvg } from "svg/Van.svg";
-import { ReactComponent as FullyIntegratedSvg } from "svg/Full-integrated.svg";
-import { ReactComponent as AlcoveSvg } from "svg/Alcove.svg";
+import { ReactComponent as ACSvg } from "pictures/svg/AC.svg";
+import { ReactComponent as AutomaticSvg } from "pictures/svg/Automatic.svg";
+import { ReactComponent as KitchenSvg } from "pictures/svg/Kitchen.svg";
+import { ReactComponent as TVSvg } from "pictures/svg/TV.svg";
+import { ReactComponent as ShowerWCSvg } from "pictures/svg/Shower.svg";
+import { ReactComponent as VanSvg } from "pictures/svg/Van.svg";
+import { ReactComponent as FullyIntegratedSvg } from "pictures/svg/Full-integrated.svg";
+import { ReactComponent as AlcoveSvg } from "pictures/svg/Alcove.svg";
 import {
   CampersTypeLabel,
   CheckboxButton,

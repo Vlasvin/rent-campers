@@ -1,24 +1,24 @@
 import styled from "styled-components";
 
-import { ReactComponent as EmptyHeartSvg } from "svg/empty-heart.svg";
-import { ReactComponent as StarSvg } from "svg/icon_star.svg";
-import { ReactComponent as LocationSvg } from "svg/map-pin.svg";
-import { ReactComponent as AdultsSvg } from "svg/Users.svg";
-import { ReactComponent as TransmissionSvg } from "svg/Automatic.svg";
-import { ReactComponent as EngineSvg } from "svg/Vector.svg";
-import { ReactComponent as KitchenSvg } from "svg/Kitchen.svg";
-import { ReactComponent as BedSvg } from "svg/Bed.svg";
-import { ReactComponent as ACSvg } from "svg/AC.svg";
-import { ReactComponent as TVSvg } from "svg/TV.svg";
-import { ReactComponent as CDSvg } from "svg/CD.svg";
-import { ReactComponent as RadioSvg } from "svg/Radio.svg";
-import { ReactComponent as ToiletSvg } from "svg/Toilet.svg";
-import { ReactComponent as FreezerSvg } from "svg/arcticons_freezer.svg";
-import { ReactComponent as HobSvg } from "svg/Hob.svg";
-import { ReactComponent as MicrowaveSvg } from "svg/Microwave.svg";
-import { ReactComponent as GasSvg } from "svg/mdi_gas.svg";
-import { ReactComponent as WaterSvg } from "svg/ion_water-outline.svg";
-import { ReactComponent as ShowerSvg } from "svg/Shower.svg";
+import { ReactComponent as EmptyHeartSvg } from "pictures/svg/empty-heart.svg";
+import { ReactComponent as StarSvg } from "pictures/svg/icon_star.svg";
+import { ReactComponent as LocationSvg } from "pictures/svg/map-pin.svg";
+import { ReactComponent as AdultsSvg } from "pictures/svg/Users.svg";
+import { ReactComponent as TransmissionSvg } from "pictures/svg/Automatic.svg";
+import { ReactComponent as EngineSvg } from "pictures/svg/Vector.svg";
+import { ReactComponent as KitchenSvg } from "pictures/svg/Kitchen.svg";
+import { ReactComponent as BedSvg } from "pictures/svg/Bed.svg";
+import { ReactComponent as ACSvg } from "pictures/svg/AC.svg";
+import { ReactComponent as TVSvg } from "pictures/svg/TV.svg";
+import { ReactComponent as CDSvg } from "pictures/svg/CD.svg";
+import { ReactComponent as RadioSvg } from "pictures/svg/Radio.svg";
+import { ReactComponent as ToiletSvg } from "pictures/svg/Toilet.svg";
+import { ReactComponent as FreezerSvg } from "pictures/svg/arcticons_freezer.svg";
+import { ReactComponent as HobSvg } from "pictures/svg/Hob.svg";
+import { ReactComponent as MicrowaveSvg } from "pictures/svg/Microwave.svg";
+import { ReactComponent as GasSvg } from "pictures/svg/mdi_gas.svg";
+import { ReactComponent as WaterSvg } from "pictures/svg/ion_water-outline.svg";
+import { ReactComponent as ShowerSvg } from "pictures/svg/Shower.svg";
 
 export const CardContainer = styled.div`
   display: flex;

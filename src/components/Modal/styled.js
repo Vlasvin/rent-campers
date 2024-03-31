@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { ReactComponent as StarSvg } from "svg/icon_star.svg";
-import { ReactComponent as LocationSvg } from "svg/map-pin.svg";
+import { ReactComponent as StarSvg } from "pictures/svg/icon_star.svg";
+import { ReactComponent as LocationSvg } from "pictures/svg/map-pin.svg";
 
 export const ModalContainer = styled.div`
   position: fixed;
@@ -156,6 +156,7 @@ export const FeaturesBtn = styled.p`
   font-size: 20px;
   font-weight: 600;
   margin-top: 0;
+  cursor: pointer;
   margin-bottom: ${({ active }) => (active ? "0" : "23px")};
   padding-bottom: ${({ active }) => (active ? "18px" : "0")};
   border-bottom: ${({ active }) =>
@@ -167,6 +168,7 @@ export const ReviewsBtn = styled.p`
   font-size: 20px;
   font-weight: 600;
   margin: 0;
+  cursor: pointer;
   margin-bottom: ${({ active }) => (active ? "0" : "23px")};
   padding-bottom: ${({ active }) => (active ? "18px" : "0")};
   border-bottom: ${({ active }) =>

@@ -3,7 +3,6 @@ import React from "react";
 import Layout from "components/Layout";
 import {
   BackgroundImage,
-  BoldText,
   DarkOverlay,
   Description,
   HomeContainer,
@@ -16,15 +15,11 @@ const HomePage = () => {
       <BackgroundImage>
         <HomeContainer>
           <DarkOverlay />
-          <Title>Ласкаво просимо до нашої компанії з оренди кемперів!</Title>
+          <Title>Welcome to our camper rental company!</Title>
           <Description>
-            Ми пропонуємо широкий вибір кемперів різної комплектації для
-            незабутнього відпочинку та подорожей. Звертайтеся до нас і отримайте
-            можливість відкрити для себе нові місця та враження!
-          </Description>
-          <Description>
-            Наші послуги включають в себе <BoldText>оренду кемперів</BoldText>,{" "}
-            <BoldText>консультації щодо вибору кемперів та маршруту</BoldText>.
+            We offer a wide selection of campers with various amenities for
+            unforgettable relaxation and travel experiences. Contact us and get
+            the opportunity to discover new places and impressions!
           </Description>
         </HomeContainer>
       </BackgroundImage>

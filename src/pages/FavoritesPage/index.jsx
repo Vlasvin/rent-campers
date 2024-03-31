@@ -1,7 +1,7 @@
 import Layout from "components/Layout";
 import React from "react";
 
-const Favorites = () => {
+const FavoritesPage = () => {
   return (
     <Layout>
       <div>
@@ -11,4 +11,4 @@ const Favorites = () => {
   );
 };
 
-export default Favorites;
+export default FavoritesPage;
