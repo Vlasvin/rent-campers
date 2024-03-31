@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import headerImg from "pictures/img/headerImg.jpg";
 
 export const HeaderContainer = styled.header`
   display: flex;
   flex-direction: row;
-  background-image: url(${headerImg});
-  background-size: cover;
   color: #fff;
   padding: 20px;
   position: fixed;

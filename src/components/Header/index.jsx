@@ -1,6 +1,9 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import logo from "pictures/img/logo.png";
+import headerImg from "pictures/img/headerImg.jpg";
+
 import {
   HeaderContainer,
   LayoutLogo,
@@ -10,11 +13,19 @@ import {
   NavList,
   StyledLink,
 } from "./styled";
-import { Link } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
-    <HeaderContainer>
+    <HeaderContainer
+      style={{
+        background: isHomePage ? "transparent" : `url(${headerImg})`,
+        backgroundSize: "cover",
+        borderBottom: "1px solid rgba(16, 24, 40, 0.3)",
+      }}
+    >
       <LayoutLogo>
         <Link to="/">
           <Logo src={logo} alt="CamperRent" />
