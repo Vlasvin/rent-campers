@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { persistStore } from "redux-persist";
+
 import { catalogReducer } from "./catalog/catalogSlice";
 import favoritesReducer from "./favorites/favoritesSlice";
 

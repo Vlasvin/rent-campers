@@ -1,6 +1,7 @@
 import React from "react";
 
 import BookForm from "components/Modal/BookForm";
+import FeatureButton from "components/Card/FeatureButton";
 
 import {
   Detail,
@@ -11,7 +12,6 @@ import {
   FeaturesContainer,
   VehicleDetails,
 } from "./styled";
-import FeatureButton from "components/Card/FeatureButton";
 
 const Features = ({ data }) => {
   const { details, form, length, width, height, tank, consumption } = data;

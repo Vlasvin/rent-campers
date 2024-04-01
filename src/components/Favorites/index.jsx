@@ -53,8 +53,6 @@ const Favorites = () => {
     document.body.style.overflow = "";
   };
 
-  // Removed useEffect that fetched data from local storage
-
   return (
     <FavoriteContainer>
       {favoriteCampers.length > 0 && <Title>Your favorite campers</Title>}
