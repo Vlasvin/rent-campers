@@ -48,7 +48,6 @@ const Card = ({ data, openModal }) => {
   const handleFavoriteToggle = () => {
     if (isFavorite) {
       dispatch(removeFromFavorites(data._id));
-      console.log(data._id);
     } else {
       dispatch(addToFavorites(data._id));
     }

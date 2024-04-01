@@ -1,12 +1,12 @@
-import Layout from "components/Layout";
 import React from "react";
+
+import Favorites from "components/Favorites";
+import Layout from "components/Layout";
 
 const FavoritesPage = () => {
   return (
     <Layout>
-      <div>
-        <h1>Your Favorite Campers</h1>
-      </div>
+      <Favorites />
     </Layout>
   );
 };
