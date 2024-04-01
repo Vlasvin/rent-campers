@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
-
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import formatLocation from "helpers/formatLocation";
-import Features from "components/Modal/Features";
-import Reviews from "components/Modal/Reviews";
 
 import {
   CloseButton,
@@ -25,6 +22,9 @@ import {
   ScrollBar,
   ActiveTabContainer,
 } from "./styled";
+
+const Features = lazy(() => import("components/Modal/Features"));
+const Reviews = lazy(() => import("components/Modal/Reviews"));
 
 const Modal = ({ closeModal, data }) => {
   const { name, rating, reviews, location, price, gallery, description } = data;
@@ -98,8 +98,10 @@ const Modal = ({ closeModal, data }) => {
             </ReviewsBtn>
           </FeaturesContainer>
           <ActiveTabContainer>
-            {activeTab === "features" && <Features data={data} />}
-            {activeTab === "reviews" && <Reviews reviews={reviews} />}
+            <Suspense fallback={<div>Loading...</div>}>
+              {activeTab === "features" && <Features data={data} />}
+              {activeTab === "reviews" && <Reviews reviews={reviews} />}
+            </Suspense>
           </ActiveTabContainer>
         </ScrollBar>
       </ModalContent>

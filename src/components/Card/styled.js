@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { ReactComponent as EmptyHeartSvg } from "pictures/svg/empty-heart.svg";
+import { ReactComponent as FillHeartSvg } from "pictures/svg/Red-heart.svg";
 import { ReactComponent as StarSvg } from "pictures/svg/icon_star.svg";
 import { ReactComponent as LocationSvg } from "pictures/svg/map-pin.svg";
 import { ReactComponent as AdultsSvg } from "pictures/svg/Users.svg";
@@ -82,6 +83,11 @@ export const IconContainer = styled.div`
 `;
 
 export const IconHeart = styled(EmptyHeartSvg)`
+  width: 24px;
+  height: 24px;
+  margin: 3px 2.5px 3px 11px;
+`;
+export const IconHeartFill = styled(FillHeartSvg)`
   width: 24px;
   height: 24px;
   margin: 3px 2.5px 3px 11px;

@@ -1,11 +1,11 @@
-import React, { lazy } from "react";
+import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 const HomePage = lazy(() => import("pages/HomePage"));
 const CatalogPage = lazy(() => import("pages/CatalogPage"));
 const FavoritesPage = lazy(() => import("pages/FavoritesPage"));
 
-export const App = () => {
+const App = () => {
   return (
     <div
       style={{
@@ -18,11 +18,35 @@ export const App = () => {
       }}
     >
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route
+          exact
+          path="/"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <HomePage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/catalog"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <CatalogPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <FavoritesPage />
+            </Suspense>
+          }
+        />
         <Route path="*" element={<HomePage />} />
       </Routes>
     </div>
   );
 };
+
+export default App;

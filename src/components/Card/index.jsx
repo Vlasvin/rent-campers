@@ -1,4 +1,10 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../redux/favorites/favoritesSlice";
 import formatLocation from "helpers/formatLocation";
 import FeatureButton from "./FeatureButton";
 
@@ -19,6 +25,7 @@ import {
   ShowMoreBtn,
   FeaturesContainer,
   TitlePriceContainer,
+  IconHeartFill,
 } from "./styled";
 
 const Card = ({ data, openModal }) => {
@@ -33,6 +40,19 @@ const Card = ({ data, openModal }) => {
     reviews,
   } = data;
 
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.favorites);
+
+  const isFavorite = favorites.includes(data._id);
+
+  const handleFavoriteToggle = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorites(data._id));
+      console.log(data._id);
+    } else {
+      dispatch(addToFavorites(data._id));
+    }
+  };
   const renderFeatureButtons = () => {
     const limitedFeatures = [
       { key: "adults", label: "Adults" },
@@ -67,7 +87,14 @@ const Card = ({ data, openModal }) => {
         <TitlePriceContainer>
           <Title>{name}</Title>
           <Price>€{Number(price).toFixed(2)}</Price>
-          <IconHeart aria-label="edit icon" />
+          {isFavorite ? (
+            <IconHeartFill
+              aria-label="edit icon"
+              onClick={handleFavoriteToggle}
+            />
+          ) : (
+            <IconHeart aria-label="edit icon" onClick={handleFavoriteToggle} />
+          )}
         </TitlePriceContainer>
 
         <IconContainer>

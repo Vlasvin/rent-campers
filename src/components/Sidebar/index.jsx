@@ -64,7 +64,6 @@ const Sidebar = ({ handleSearch }) => {
   };
 
   const handleFilterSearch = () => {
-    // Передаємо значення фільтрів до батьківського компоненту для подальшої обробки
     handleSearch({ location, equipment, campersType });
   };
 
@@ -106,7 +105,7 @@ const Sidebar = ({ handleSearch }) => {
           <RadioButton
             key={value}
             onClick={() => handleCampersTypeChange(value)}
-            active={campersType === value}
+            active={campersType === value ? "true" : undefined}
           >
             {icon}
             <RadioButtonLabel>{label}</RadioButtonLabel>

@@ -1,33 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import {
-  //   FLUSH,
-  //   PAUSE,
-  //   PERSIST,
-  //   PURGE,
-  //   REGISTER,
-  //   REHYDRATE,
-  //   persistReducer,
-  persistStore,
-} from "redux-persist";
-// import storage from "redux-persist/lib/storage";
+import { persistStore } from "redux-persist";
 import { catalogReducer } from "./catalog/catalogSlice";
-
-// const favoritesPersistConfig = {
-//   key: "favorites",
-//   storage,
-// };
+import favoritesReducer from "./favorites/favoritesSlice";
 
 export const store = configureStore({
   reducer: {
     catalog: catalogReducer,
-    // favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
+    favorites: favoritesReducer,
   },
-  //   middleware: (getDefaultMiddleware) =>
-  //     getDefaultMiddleware({
-  //       serializableCheck: {
-  //         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-  //       },
-  //     }),
 });
 
 export const persistor = persistStore(store);
